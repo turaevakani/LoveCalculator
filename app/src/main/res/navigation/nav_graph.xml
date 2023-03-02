@@ -8,13 +8,14 @@
     <fragment
         android:id="@+id/firstFragment"
         android:name="com.geektech.lovecalculator.FirstFragment"
-        android:label="first_fragment"
-        tools:layout="@layout/first_fragment"/>
-
+        android:label="second_fragment"
+        tools:layout="@layout/first_fragment" />
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.geektech.lovecalculator.SecondFragment"
-        android:label="second_fragment"
-        tools:layout="@layout/second_fragment"/>
+        android:label="first_fragment"
+        tools:layout="@layout/second_fragment" />
+
+
 
 </navigation>

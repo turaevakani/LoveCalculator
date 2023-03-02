@@ -1,6 +1,7 @@
-package com.geektech.lovecalculator
+package com.geektech.lovecalculator.remote
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 //{
 //    "fname": "Akylai",
@@ -15,4 +16,4 @@ data class LoveModel(
     var secondName: String,
     var percentage: String,
     var result: String
-)
+) : Serializable
