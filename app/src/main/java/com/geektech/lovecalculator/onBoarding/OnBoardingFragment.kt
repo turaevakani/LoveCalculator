@@ -10,9 +10,10 @@ import androidx.navigation.fragment.findNavController
 import com.geektech.lovecalculator.FirstFragment.Companion.PREF_SEEN_KEY
 import com.geektech.lovecalculator.databinding.FragmentOnBoardingBinding
 import com.geektech.lovecalculator.onBoarding.adapter.OnBoardingAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class OnBoardingFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardingBinding
