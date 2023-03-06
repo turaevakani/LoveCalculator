@@ -15,6 +15,11 @@
         android:name="com.geektech.lovecalculator.SecondFragment"
         android:label="first_fragment"
         tools:layout="@layout/second_fragment" />
+    <fragment
+        android:id="@+id/OnBoardingFragment"
+        android:name="com.geektech.lovecalculator.onBoarding.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding"/>
 
 
 

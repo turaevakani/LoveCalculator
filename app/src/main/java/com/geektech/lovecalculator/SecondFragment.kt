@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.geektech.lovecalculator.FirstFragment.Companion.LOVE_DATA
 import com.geektech.lovecalculator.databinding.SecondFragmentBinding
 import com.geektech.lovecalculator.remote.LoveModel
 import com.geektech.lovecalculator.viewmodel.LoveViewModel
@@ -29,7 +30,7 @@ class SecondFragment: Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val inputData =arguments?.getSerializable("names") as LoveModel
+        val inputData =arguments?.getSerializable(LOVE_DATA) as LoveModel
         with(binding){
             tvFirstName.text = inputData.firstName
             tvSecondName.text = inputData.secondName

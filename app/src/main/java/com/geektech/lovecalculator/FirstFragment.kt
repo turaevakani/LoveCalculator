@@ -1,5 +1,6 @@
 package com.geektech.lovecalculator
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,12 +13,17 @@ import androidx.navigation.fragment.findNavController
 import com.geektech.lovecalculator.databinding.FirstFragmentBinding
 import com.geektech.lovecalculator.viewmodel.LoveViewModel
 import com.geektech.lovecalculator.repository.Repository
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class FirstFragment : Fragment() {
 
     private lateinit var binding: FirstFragmentBinding
     private val viewModel: LoveViewModel by viewModels()
+
+    @Inject
+     lateinit var pref: SharedPreferences
 
 
     override fun onCreateView(
@@ -28,9 +34,16 @@ class FirstFragment : Fragment() {
         return binding.root
     }
 
+    private fun isUserSeen(): Boolean{
+        return pref.getBoolean(PREF_SEEN_KEY,false)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initeClicker()
+        if (!isUserSeen()) {
+            findNavController().navigate(R.id.OnBoardingFragment)
+        }
     }
 
     private fun initeClicker() {
@@ -41,10 +54,15 @@ class FirstFragment : Fragment() {
                     secondName = etSecondName.text.toString()
                 )
                     .observe(viewLifecycleOwner, Observer {
-                        findNavController().navigate(R.id.secondFragment, bundleOf("names" to it))
+                        findNavController().navigate(R.id.secondFragment, bundleOf(LOVE_DATA to it))
                     })
             }
         }
+    }
+
+    companion object{
+        const val PREF_SEEN_KEY ="Seen.key"
+        const val LOVE_DATA = "Love.data"
     }
 
 }
