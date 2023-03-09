@@ -23,7 +23,7 @@ class HistoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val list = App.appDatabase.loveDao().getAll()
+        val list = App.appDatabase.loveDao().sortByFirstName()
         var data = ""
 
         list.forEach{
