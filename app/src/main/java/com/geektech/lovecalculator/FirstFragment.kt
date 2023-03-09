@@ -64,6 +64,10 @@ class FirstFragment : Fragment() {
                         findNavController().navigate(R.id.secondFragment, bundleOf(LOVE_DATA to it))
                     })
             }
+
+            binding.btnHistory.setOnClickListener {
+                findNavController().navigate(R.id.historyFragment)
+            }
         }
     }
 

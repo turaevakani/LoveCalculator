@@ -6,14 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.geektech.lovecalculator.databinding.FirstFragmentBinding
 import com.geektech.lovecalculator.databinding.FragmentHistoryBinding
 import com.geektech.lovecalculator.viewmodel.LoveViewModel
 
 class HistoryFragment : Fragment() {
 
     private lateinit var binding: FragmentHistoryBinding
-    private val viewModel: LoveViewModel by viewModels()
 
     override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
