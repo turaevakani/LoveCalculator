@@ -87,6 +87,20 @@
         android:textColor="@color/white"
         />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_history"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_user"
+        android:backgroundTint="@color/red"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="@string/history"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        />
+
 
 
 

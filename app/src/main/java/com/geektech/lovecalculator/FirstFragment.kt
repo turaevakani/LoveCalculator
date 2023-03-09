@@ -13,6 +13,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.geektech.lovecalculator.databinding.FirstFragmentBinding
+import com.geektech.lovecalculator.remote.LoveModel
 import com.geektech.lovecalculator.viewmodel.LoveViewModel
 import com.geektech.lovecalculator.repository.Repository
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,6 +47,9 @@ class FirstFragment : Fragment() {
         if (!isUserSeen()) {
             findNavController().navigate(R.id.OnBoardingFragment)
         }
+        binding.btnHistory.setOnClickListener {
+            findNavController().navigate(R.id.historyFragment)
+        }
     }
 
     private fun initeClicker() {
@@ -56,6 +60,7 @@ class FirstFragment : Fragment() {
                     secondName = etSecondName.text.toString()
                 )
                     .observe(viewLifecycleOwner, Observer {
+                        App.appDatabase.loveDao().insert(it)
                         findNavController().navigate(R.id.secondFragment, bundleOf(LOVE_DATA to it))
                     })
             }

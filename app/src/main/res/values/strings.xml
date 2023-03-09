@@ -8,4 +8,7 @@
     <string name="send">Send</string>
     <string name="try_again">Try Again</string>
     <string name="get_started">Get Started</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="history">History</string>
 </resources>

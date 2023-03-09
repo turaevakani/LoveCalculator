@@ -36,9 +36,13 @@ class SecondFragment: Fragment() {
             tvSecondName.text = inputData.secondName
             tvPercentage.text = inputData.percentage +"%"
             tvResult.text = inputData.result
-            binding.btnTry.setOnClickListener{
+            btnTry.setOnClickListener{
                 findNavController().navigateUp()
             }
+            btnHistory.setOnClickListener {
+                findNavController().navigate(R.id.historyFragment)
+            }
+
         }
 
     }
