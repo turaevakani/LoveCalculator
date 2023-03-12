@@ -46,6 +46,8 @@
         android:text="@string/get_started"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/red"
         android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
